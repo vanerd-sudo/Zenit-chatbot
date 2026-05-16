@@ -62,22 +62,48 @@ def cargar_conocimiento():
         return json.load(f)
 
 async def responder(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    texto_usuario = unidecode(update.message.text.lower())
-    palabras = texto_usuario.split()
-    
-    # Cargamos el "cerebro" del JSON
-    datos = cargar_conocimiento()
-    respuesta_final = None
+    # 1. Limpiamos el texto del usuario
+    texto_usuario = update.message.text.lower()
+    texto_usuario = unidecode(texto_usuario) 
 
-    # Buscamos en el JSON si alguna palabra coincide con los tags
+    respuesta_final = "Aún sigo aprendiendo. Prueba hablándome sobre estrés, organización, exámenes o motivación. 🌱"
+
+    # --- LA CORRECCIÓN ESTÁ AQUÍ ---
+    # Leemos el archivo JSON para que la variable "datos" exista
+    import json
+    with open('conocimiento.json', 'r', encoding='utf-8') as archivo:
+        datos = json.load(archivo)
+    # -------------------------------
+
+    # 2. Buscamos en el JSON
     for intencion in datos['intenciones']:
         if any(tag in texto_usuario for tag in intencion['tags']):
             respuesta_final = intencion['respuesta']
-            break
+            
+            # 3. ¡EL TOQUE MAESTRO! Si la intención es de apoyo emocional, traemos la API
+            tags_emocionales = ["estres", "ansied", "motivacion", "rendirse", "triste", "agobi"]
+            
+            if any(tag in texto_usuario for tag in tags_emocionales):
+                try:
+                    # Traemos la frase
+                    api_resp = requests.get('https://zenquotes.io/api/random')
+                    datos_api = api_resp.json()
+                    frase = datos_api[0]['q']
+                    autor = datos_api[0]['a']
+                    
+                    # Traducimos
+                    traductor = GoogleTranslator(source='en', target='es')
+                    frase_es = traductor.translate(frase)
+                    
+                    # Pegamos la frase de la API a tu respuesta del JSON
+                    respuesta_final += f"\n\nAdemás, te comparto esta reflexión:\n«{frase_es}»\n— {autor}"
+                except Exception as e:
+                    # Si la API falla, no pasa nada, el bot sigue enviando solo el consejo del JSON
+                    pass 
+            
+            break # Salimos del ciclo porque ya encontramos la respuesta
 
-    if not respuesta_final:
-        respuesta_final = "Aún estoy aprendiendo sobre eso. Intenta preguntarme sobre estrés, exámenes o fatiga."
-
+    # 4. Enviamos el mensaje compuesto al usuario
     await update.message.reply_text(respuesta_final)
 
 # 4. EJECUCIÓN
