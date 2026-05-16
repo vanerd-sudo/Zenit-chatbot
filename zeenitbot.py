@@ -6,6 +6,7 @@ from unidecode import unidecode
 from flask import Flask
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
+import requests
 
 # 1. CARGAR CONFIGURACIÓN
 load_dotenv()
@@ -25,6 +26,30 @@ def run_flask():
 # 3. LÓGICA DEL BOT
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Hola 👋 Soy ZeenitBot 🧠✨. ¿En qué puedo ayudarte hoy?")
+
+
+async def motivacion(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # 1. Avisamos que estamos buscando (para que el alumno no desespere)
+    await update.message.reply_text("Buscando sabiduría en la red para ti... 🧠✨")
+    
+    try:
+        # 2. Hacemos la llamada a la API de ZenQuotes
+        respuesta = requests.get('https://zenquotes.io/api/random')
+        
+        # 3. Convertimos la respuesta a formato JSON (como el tuyo)
+        datos = respuesta.json()
+        
+        # 4. Extraemos la frase (q = quote) y el autor (a = author)
+        frase = datos[0]['q']
+        autor = datos[0]['a']
+        
+        # 5. Armamos el mensaje final y lo enviamos
+        mensaje_final = f"«{frase}»\n— {autor}"
+        await update.message.reply_text(mensaje_final)
+        
+    except Exception as e:
+        # Si el internet falla o la API se cae, el bot no explota
+        await update.message.reply_text("Mi conexión con los filósofos está fallando un poco. ¡Pero recuerda que tú puedes con esto! 💪")
 
 #RESPONDER
 def cargar_conocimiento():
@@ -65,5 +90,5 @@ if __name__ == "__main__":
         app = ApplicationBuilder().token(TOKEN).build()
         app.add_handler(CommandHandler("start", start))
         app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, responder))
-        
+        app.add_handler(CommandHandler("motivacion", motivacion))
         app.run_polling()

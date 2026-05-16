@@ -2,3 +2,4 @@ python-telegram-bot==22.6
 flask
 unidecode
 python-dotenv
+requests
