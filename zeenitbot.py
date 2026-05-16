@@ -2,21 +2,33 @@ import os
 import json
 import random
 import requests
+import threading
+from flask import Flask
 from deep_translator import GoogleTranslator
 from dotenv import load_dotenv
 from unidecode import unidecode
-
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
+
 # Cargamos el Token oculto
 load_dotenv()
+
+# SERVIDOR FANTASMA
+app_web = Flask(__name__)
+
+@app_web.route('/')
+def home():
+    return "ZeenitBot está vivo y respirando en la nube."
+
+def run_web():
+    port = int(os.environ.get("PORT", 5000))
+    app_web.run(host="0.0.0.0", port=port)
 
 # Función para cuando le dan a /start
 async def iniciar(update: Update, context: ContextTypes.DEFAULT_TYPE):
     nombre = update.message.from_user.first_name
     
-    # Menú de botones para el inicio
     teclado_botones = [
         ["🧘‍♀️ Tengo Estrés", "⏱️ Pomodoro"],
         ["📝 Tips de Exámenes", "💡 Motivación"]
@@ -86,11 +98,14 @@ def main():
     TOKEN = os.getenv("TOKEN")
     app = Application.builder().token(TOKEN).build()
 
-    # Le decimos al bot qué funciones usar
     app.add_handler(CommandHandler("start", iniciar))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, responder))
 
-    print("¡ZeenitBot está encendido y listo con botones!")
+    # Encendemos el servidor fantasma en segundo plano
+    hilo_web = threading.Thread(target=run_web)
+    hilo_web.start()
+
+    print("¡ZeenitBot está encendido y listo con servidor web!")
     app.run_polling()
 
 if __name__ == '__main__':
