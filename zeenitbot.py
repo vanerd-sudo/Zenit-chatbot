@@ -68,21 +68,25 @@ async def responder(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     respuesta_final = "Aún sigo aprendiendo. Prueba hablándome sobre estrés, organización, exámenes o motivación. 🌱"
 
-    # --- LA CORRECCIÓN ESTÁ AQUÍ ---
-    # Leemos el archivo JSON para que la variable "datos" exista
+    # Leemos el archivo JSON 
     import json
     with open('conocimiento.json', 'r', encoding='utf-8') as archivo:
         datos = json.load(archivo)
-    # -------------------------------
 
     # 2. Buscamos en el JSON
     for intencion in datos['intenciones']:
         if any(tag in texto_usuario for tag in intencion['tags']):
             respuesta_final = intencion['respuesta']
             
-            # 3. ¡EL TOQUE MAESTRO! Si la intención es de apoyo emocional, traemos la API
-            tags_emocionales = ["estres", "ansied", "motivacion", "rendirse", "triste", "agobi"]
+            # 3. ¡IDEA EXTRA APLICADA! 
+            # Lista exclusiva de tags emocionales (No incluye "hola", "gracias", etc.)
+            tags_emocionales = [
+                "estres", "ansied", "agobi", "presion", "panico", "colaps",
+                "motivacion", "rendirse", "no puedo", "triste", "desmotivad", "llorar",
+                "reprobe", "fracas", "mala calificacion", "reprobado", "falle"
+            ]
             
+            # Solo si el usuario usó un tag emocional, llamamos a la API
             if any(tag in texto_usuario for tag in tags_emocionales):
                 try:
                     # Traemos la frase
@@ -95,15 +99,14 @@ async def responder(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     traductor = GoogleTranslator(source='en', target='es')
                     frase_es = traductor.translate(frase)
                     
-                    # Pegamos la frase de la API a tu respuesta del JSON
+                    # Pegamos la frase
                     respuesta_final += f"\n\nAdemás, te comparto esta reflexión:\n«{frase_es}»\n— {autor}"
                 except Exception as e:
-                    # Si la API falla, no pasa nada, el bot sigue enviando solo el consejo del JSON
                     pass 
             
-            break # Salimos del ciclo porque ya encontramos la respuesta
+            break # Salimos del ciclo al encontrar la primera coincidencia
 
-    # 4. Enviamos el mensaje compuesto al usuario
+    # 4. Enviamos el mensaje al usuario
     await update.message.reply_text(respuesta_final)
 
 # 4. EJECUCIÓN
@@ -116,7 +119,8 @@ if __name__ == "__main__":
         threading.Thread(target=run_flask, daemon=True).start()
         
         print("Zeenit arrancando en modo Web Service Gratis...")
-        
+
+  
         # Construcción del Bot
         app = ApplicationBuilder().token(TOKEN).build()
         app.add_handler(CommandHandler("start", start))

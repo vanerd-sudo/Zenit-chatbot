@@ -17,7 +17,8 @@ permitiendo actualizaciones rápidas sin tocar el código principal.
 * **JSON**: Para el almacenamiento del conocimiento del bot.
 * **Flask**: Para el mantenimiento del servidor (Health Checks) en la nube.
 * **Git/GitHub**: Control de versiones y despliegue continuo.
-
+* **requests**: Para consumo de la API REST de ZenQuotes.
+* **deep-translator**: Para traducción de respuestas de la API en tiempo real.
 ## 📂 Estructura del Proyecto
 * `zeenitbot.py`: El "motor" lógico del bot.
 * `conocimiento.json`: La "sabiduría" del bot (tags y respuestas).

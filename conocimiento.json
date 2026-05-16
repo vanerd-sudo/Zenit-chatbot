@@ -1,41 +1,56 @@
 {
     "intenciones": [
         {
-            "tags": ["estres", "ansied", "agobi", "presion"],
-            "respuesta": "Zeenit detecta estrés 🧠💥. Respira: Inhala en 4s, mantén 7s, exhala 8s. ¡Tú puedes!"
+            "tags": ["estres", "ansied", "agobi", "presion", "panico", "colaps"],
+            "respuesta": "Zeenit detecta estrés 🧠💥. Detén lo que haces y respira: Inhala en 4s, mantén 7s, exhala 8s. Esto desactiva la alarma de tu cerebro. ¡Tú puedes con esto!"
         },
         {
-            "tags": ["cansad", "sueno", "fatiga", "dormir"],
-            "respuesta": "Zeenit detecta fatiga académica 😴. Si llevas más de 2h, tu cerebro necesita 15 min de descanso real."
+            "tags": ["cansad", "sueno", "fatiga", "dormir", "descans", "break", "agotad"],
+            "respuesta": "🧠 Un 'Descanso Efectivo' no es ver TikTok (eso satura más tu cerebro). Haz un 'Ayuno de Pantallas' por 10 min: 1. Levántate. 2. Estírate. 3. Toma agua. 4. Mira por la ventana. Además, recuerda que dormir 7-8h consolida tu memoria en el hipocampo."
         },
         {
-            "tags": ["organizacion", "tiempo", "tareas", "horario"],
-            "respuesta": "La organización reduce la carga mental 📅. Prueba la Técnica Pomodoro: 25 min de estudio intenso y 5 de descanso."
+            "tags": ["organizacion", "tiempo", "tareas", "horario", "pomodoro", "estudio", "agenda"],
+            "respuesta": "⏱️ ¡Optimiza tu tiempo! Divide tus tareas en pasos de máximo 20 min. Usa la Técnica Pomodoro: 25 min de enfoque total (sin celular) y 5 de descanso. Después de 4 ciclos, toma un descanso largo de 15 min. La organización reduce tu carga mental 📅."
         },
         {
-            "tags": ["examen", "parcial", "prueba", "finales"],
-            "respuesta": "¡Mucho éxito en tus exámenes! 📝 Tip: Haz mapas mentales, ayudan a tu cerebro a conectar conceptos más rápido que solo leer."
+            "tags": ["examen", "parcial", "prueba", "finales", "evaluacion"],
+            "respuesta": "¡A dominar ese examen! 📝 Tip neuro-científico: Haz mapas mentales para conectar conceptos. Y no sacrifiques tu sueño: un repaso de 15 min justo antes de dormir ayuda a fijar la memoria a largo plazo mucho mejor que desvelarte."
         },
         {
-            "tags": ["procrastinar", "distraccion", "perder el tiempo", "celular"],
-            "respuesta": "¡Zeenit te ve! 👀 Aleja el celular 10 metros de tu escritorio. La fuerza de voluntad es limitada, el diseño de tu espacio no."
+            "tags": ["procrastinar", "distraccion", "perder el tiempo", "celular", "tiktok", "instagram"],
+            "respuesta": "¡Zeenit te ve! 👀 Aleja el celular 10 metros de tu escritorio. La fuerza de voluntad se agota, pero si cambias tu entorno físico, será más fácil concentrarte. ¡Ponlo en modo avión o en otra habitación!"
         },
         {
-            "tags": ["motivacion", "rendirse", "no puedo", "triste"],
-            "respuesta": "Es normal sentirse así a veces 🌟. Recuerda por qué empezaste. Un mal día no define tu capacidad como estudiante."
+            "tags": ["motivacion", "rendirse", "no puedo", "triste", "desmotivad", "llorar"],
+            "respuesta": "Es normal sentirse así a veces 🌟. Un mal día no define tu capacidad. Recuerda por qué empezaste tu carrera. Tómate un respiro, sé amable contigo mismo y vuelve a intentarlo mañana con la mente fresca."
         },
         {
-            "tags": ["exponer", "publico", "nervios", "presentacion"],
-            "respuesta": "¡A dominar ese escenario! 🎤 Practica frente al espejo y recuerda que tú eres quien más sabe de tu tema en ese momento."
+            "tags": ["exponer", "publico", "nervios", "presentacion", "exposicion"],
+            "respuesta": "¡A dominar ese escenario! 🎤 Es normal sentir nervios, es tu cuerpo dándote energía extra. Practica frente al espejo, respira profundo y recuerda: tú eres quien más sabe de tu tema en ese momento."
         },
         {
-            "tags": ["organizacion", "tiempo", "tareas", "horario"],
-            "respuesta": "La organización reduce la carga mental 📅. Divide tus tareas en pasos de máximo 20 minutos."
+            "tags": ["reprobe", "fracas", "mala calificacion", "reprobado", "falle"],
+            "respuesta": "¡Hey, respira! 🛑 Una calificación no te define. El fracaso es solo información: ahora sabes qué áreas reforzar. Revisa tus errores, pide feedback y ajusta tu método de estudio. Eres capaz de superar esto."
         },
         {
-            "tags": ["examen", "parcial", "prueba"],
-            "respuesta": "¡Mucho éxito en tu examen! 📝 Recuerda que un repaso de 10 min antes de dormir ayuda a fijar la memoria."
+            "tags": ["bloqueo", "estancad", "confusion", "blanco", "no se que hacer", "bloquead"],
+            "respuesta": "Zeenit detecta un bloqueo creativo 🧱. No fuerces la máquina. Cambia de entorno: ve a otra habitación, sal a caminar 5 minutos o escribe todas tus ideas en un papel sin juzgarlas. ¡El cerebro resuelve problemas cuando se relaja!"
+        },
+        {
+            "tags": ["hola", "buenos dias", "buenas tardes", "buenas noches", "hey", "saludos"],
+            "respuesta": "¡Hola! 👋 Soy Zeenit, tu compañero de bienestar estudiantil. ¿Cómo te sientes hoy? ¿Hay algo que te esté preocupando de la universidad?"
+        },
+        {
+            "tags": ["gracias", "agradezco", "buenisimo", "genial", "excelente", "grx"],
+            "respuesta": "¡De nada! 🥰 Para eso estoy aquí. Recuerda que cuidar de tu mente es tan importante como estudiar para tus exámenes. ¡Mucho éxito hoy!"
+        },
+        {
+            "tags": ["adios", "bye", "chao", "hasta luego", "nos vemos", "cuidate"],
+            "respuesta": "¡Nos vemos pronto! 🚀 No olvides tomar tus descansos efectivos y estirarte un poco. ¡Zeenit siempre estará aquí cuando me necesites!"
+        },
+        {
+            "tags": ["quien eres", "que haces", "como funcionas", "ayuda", "comandos"],
+            "respuesta": "🤖 Soy ZeenitBot, un asistente experto para universitarios. Puedo darte consejos si te sientes estresado, cansado, desmotivado, si vas a exponer o si necesitas organizar tu tiempo con el método Pomodoro. ¡Solo cuéntame cómo te va!"
         }
     ]
-    
 }
