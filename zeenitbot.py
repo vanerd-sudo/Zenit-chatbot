@@ -1,6 +1,8 @@
 import os
 import threading
 import json
+import random
+from turtle import update
 from dotenv import load_dotenv
 from unidecode import unidecode
 from flask import Flask
@@ -62,51 +64,62 @@ def cargar_conocimiento():
         return json.load(f)
 
 async def responder(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    # 1. Limpiamos el texto del usuario
+    # 1. ¡Extraemos el nombre del usuario de Telegram!
+    nombre_usuario = update.message.from_user.first_name
+
+    # 2. Limpiamos el texto del usuario
     texto_usuario = update.message.text.lower()
     texto_usuario = unidecode(texto_usuario) 
 
-    respuesta_final = "Aún sigo aprendiendo. Prueba hablándome sobre estrés, organización, exámenes o motivación. 🌱"
+    # Respuesta por defecto (¡ahora con nombre!)
+    respuesta_final = f"Aún sigo aprendiendo, {nombre_usuario}. 🌱 Prueba hablándome sobre estrés, organización, exámenes o motivación."
 
-    # Leemos el archivo JSON 
     import json
     with open('conocimiento.json', 'r', encoding='utf-8') as archivo:
         datos = json.load(archivo)
 
-    # 2. Buscamos en el JSON
+    # 3. Buscamos en el JSON
     for intencion in datos['intenciones']:
         if any(tag in texto_usuario for tag in intencion['tags']):
-            respuesta_final = intencion['respuesta']
             
-            # 3. ¡IDEA EXTRA APLICADA! 
-            # Lista exclusiva de tags emocionales (No incluye "hola", "gracias", etc.)
+            # --- NUEVA LÓGICA DE RESPUESTAS ALEATORIAS ---
+            respuesta_bruta = intencion['respuesta']
+            
+            # Si en tu JSON la respuesta es una lista [...], elige una al azar
+            if isinstance(respuesta_bruta, list):
+                respuesta_elegida = random.choice(respuesta_bruta)
+            else:
+                # Si sigue siendo un texto normal, la usa tal cual
+                respuesta_elegida = respuesta_bruta
+                
+            # Inyectamos el nombre del usuario donde hayas puesto "{nombre}"
+            respuesta_final = respuesta_elegida.replace("{nombre}", nombre_usuario)
+            # ---------------------------------------------
+            
+            # 4. Lógica de la API para temas emocionales
             tags_emocionales = [
                 "estres", "ansied", "agobi", "presion", "panico", "colaps",
                 "motivacion", "rendirse", "no puedo", "triste", "desmotivad", "llorar",
                 "reprobe", "fracas", "mala calificacion", "reprobado", "falle"
             ]
             
-            # Solo si el usuario usó un tag emocional, llamamos a la API
             if any(tag in texto_usuario for tag in tags_emocionales):
                 try:
-                    # Traemos la frase
                     api_resp = requests.get('https://zenquotes.io/api/random')
                     datos_api = api_resp.json()
                     frase = datos_api[0]['q']
                     autor = datos_api[0]['a']
                     
-                    # Traducimos
                     traductor = GoogleTranslator(source='en', target='es')
                     frase_es = traductor.translate(frase)
                     
-                    # Pegamos la frase
                     respuesta_final += f"\n\nAdemás, te comparto esta reflexión:\n«{frase_es}»\n— {autor}"
                 except Exception as e:
                     pass 
             
-            break # Salimos del ciclo al encontrar la primera coincidencia
+            break 
 
-    # 4. Enviamos el mensaje al usuario
+    # 5. Enviamos el mensaje al usuario
     await update.message.reply_text(respuesta_final)
 
 # 4. EJECUCIÓN
@@ -127,3 +140,4 @@ if __name__ == "__main__":
         app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, responder))
         app.add_handler(CommandHandler("motivacion", motivacion))
         app.run_polling()
+        update.message.from_user.first_name

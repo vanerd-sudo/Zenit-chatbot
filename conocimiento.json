@@ -37,8 +37,12 @@
             "respuesta": "Zeenit detecta un bloqueo creativo 🧱. No fuerces la máquina. Cambia de entorno: ve a otra habitación, sal a caminar 5 minutos o escribe todas tus ideas en un papel sin juzgarlas. ¡El cerebro resuelve problemas cuando se relaja!"
         },
         {
-            "tags": ["hola", "buenos dias", "buenas tardes", "buenas noches", "hey", "saludos"],
-            "respuesta": "¡Hola! 👋 Soy Zeenit, tu compañero de bienestar estudiantil. ¿Cómo te sientes hoy? ¿Hay algo que te esté preocupando de la universidad?"
+            "tags": ["hola", "buenos dias", "buenas tardes", "buenas noches", "hey", "saludos", "que onda", "holi", "holis"],
+            "respuesta": [
+                "¡Hola, {nombre}! 👋 Soy Zeenit, tu compañero de bienestar estudiantil. ¿Cómo te sientes hoy?",
+                "¡Qué onda, {nombre}! Aquí Zeenit reportándose. ¿Todo bien con la uni?",
+                "¡Hola {nombre}! Recuerda respirar profundo hoy. ¿Qué te trae por aquí? 🌟"
+            ]
         },
         {
             "tags": ["gracias", "agradezco", "buenisimo", "genial", "excelente", "grx"],
