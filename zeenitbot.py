@@ -7,6 +7,7 @@ from flask import Flask
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 import requests
+from deep_translator import GoogleTranslator
 
 # 1. CARGAR CONFIGURACIÓN
 load_dotenv()
@@ -39,12 +40,16 @@ async def motivacion(update: Update, context: ContextTypes.DEFAULT_TYPE):
         # 3. Convertimos la respuesta a formato JSON (como el tuyo)
         datos = respuesta.json()
         
-        # 4. Extraemos la frase (q = quote) y el autor (a = author)
+       # Extraemos la frase y el autor en inglés
         frase = datos[0]['q']
         autor = datos[0]['a']
         
-        # 5. Armamos el mensaje final y lo enviamos
-        mensaje_final = f"«{frase}»\n— {autor}"
+        # ¡Magia! Traducimos la frase al español
+        traductor = GoogleTranslator(source='en', target='es')
+        frase_es = traductor.translate(frase)
+        
+        # Armamos el mensaje final con la frase traducida
+        mensaje_final = f"«{frase_es}»\n— {autor}"
         await update.message.reply_text(mensaje_final)
         
     except Exception as e:

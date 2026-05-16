@@ -3,3 +3,4 @@ flask
 unidecode
 python-dotenv
 requests
+deep-translator
