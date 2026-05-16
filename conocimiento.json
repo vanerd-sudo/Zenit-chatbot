@@ -1,35 +1,60 @@
 {
     "intenciones": [
         {
-            "tags": ["estres", "ansied", "agobi", "presion", "panico", "colaps", "estresado", "estresada", "ansiosa", "ansioso", "asustado", "asustada", "tengo miedo", "frustra", "nervios", "no puedo mas", "bucle", "ahogado", "ahogada", "presionado", "presionada"],
-            "respuesta": "Zeenit detecta estrés 🧠💥. Detén lo que haces, {nombre}, y respira: Inhala en 4s, mantén 7s, exhala 8s. Esto desactiva la alarma de tu cerebro. ¡Tú puedes con esto, no estás solo/a!"
-        },
-        {
-            "tags": ["cansad", "sueno", "fatiga", "dormir", "descans", "break", "agotad", "desvelado", "desvelada", "sin energia", "morirme de sueno", "pestañita", "break", "pausa", "relajarme", "un respiro", "flojera", "perez"],
+            "tags": ["estres", "ansied", "agobi", "presion", "estresado", "estresada", "ansiosa", "ansioso", "frustra", "nervios", "presionado", "presionada"],
             "respuesta": [
-                "🧠 Un 'Descanso Efectivo' no es ver TikTok (eso satura más tu cerebro). Haz un 'Ayuno de Pantallas' por 10 min, {nombre}: 1. Levántate. 2. Estírate. 3. Toma agua. 4. Mira por la ventana. ¡Dale un respiro real a tu mente!",
-                "¡Ojo con el cansancio, {nombre}! 😴 Si llevas más de 2 horas estudiando, tu cerebro ya no está absorbiendo información. Tómate 15 minutos de descanso real (lejos del celular) y notarás la diferencia al volver.",
-                "El descanso también es parte del estudio, {nombre}. 🛌 Recuerda que dormir entre 7 y 8 horas es vital para que tu cerebro guarde lo que aprendiste hoy en la memoria a largo plazo. ¡No te desveles por gusto!"
+                "Zeenit detecta estrés 🧠💥. Detén lo que haces, {nombre}, y respira: Inhala en 4s, mantén 7s, exhala 8s. ¡Tú puedes con esto, no estás solo/a!",
+                "La presión se siente fuerte hoy, ¿verdad, {nombre}? 🌪️ Intenta la técnica del 'Volcado Cerebral': anota en un papel TODO lo que te preocupa, sin orden. Sacarlo de tu cabeza reduce la ansiedad al instante.",
+                "¡Alto ahí, {nombre}! 🛑 Cuando el estrés sube, la lógica baja. Ve a lavarte la cara con agua fría o toma un vaso de agua con hielo. Ese cambio de temperatura 'reinicia' tu sistema nervioso."
             ]
         },
         {
-            "tags": ["organizacion", "tiempo", "tareas", "horario", "pomodoro", "estudio", "agenda", "organizar", "planificar", "no me da el tiempo", "muchas cosas por hacer", "calendario", "entregas", "proyectos", "metodo"],
-            "respuesta": "⏱️ ¡Optimiza tu tiempo, {nombre}! Divide tus tareas en pasos chicos de máximo 20 min. Usa la Técnica Pomodoro: 25 min de enfoque total (sin celular) y 5 de descanso. Después de 4 ciclos, toma un descanso largo de 15 min. ¡La organización reduce tu carga mental! 📅"
+            "tags": ["ataque de panico", "mucha ansiedad", "me falta el aire", "palpitaciones", "panico", "colaps", "bucle", "ahogado", "ahogada", "hiperventilando"],
+            "respuesta": "Zeenit está aquí contigo, {nombre}. 🫂 Vamos a aterrizar usando la técnica 5-4-3-2-1. Nombra en voz alta: 5 cosas que veas, 4 que puedas tocar, 3 que escuches, 2 que huelas y 1 emoción que sientas. Respira conmigo. Todo va a estar bien."
         },
         {
-            "tags": ["examen", "parcial", "prueba", "finales", "evaluacion", "test", "quizz", "tengo examen", "estudiar para", "examenes"],
+            "tags": ["tecnica de estudio", "como estudiar", "no se como estudiar", "metodo de estudio", "mejores tecnicas", "aprender rapido", "tips de estudio", "concentrarme", "memorizar"],
             "respuesta": [
-                "¡Mucho éxito en tus exámenes, {nombre}! 📝 Tip neuro-científico: Haz mapas mentales o intenta explicale el tema a alguien más para conectar conceptos rápidos. ¡Confía en lo que sabes!",
-                "¡A dominar esa prueba, {nombre}! Un repaso rápido de 15 minutos justo antes de dormir ayuda a fijar la memoria mucho mejor que quedarte despierto toda la madrugada tomando café. ¡El cerebro descansado rinde más!"
+                "⏱️ Prueba la **Técnica Pomodoro**, {nombre}: 25 min de enfoque total (sin celular) y 5 de descanso. Después de 4 ciclos, descansa 15 min. ¡Ideal para empezar a estudiar sin abrumarte!",
+                "🧠 ¿Conoces la **Técnica Feynman**, {nombre}? Intenta explicarle el tema que estás estudiando a un niño de 5 años (o a mí). Si usas palabras muy complejas o te trabas, ahí es donde debes repasar. ¡Es infalible!",
+                "💡 Olvida leer y subrayar, {nombre}. Usa el **Active Recall** (Recuerdo Activo): Lee un concepto, cierra el cuaderno y oblígate a escribir o decir todo lo que recuerdes. Es incómodo, ¡pero es como hacer pesas con el cerebro!",
+                "📝 Intenta el método **Blurting**, {nombre}: Toma una hoja en blanco y escribe todo, absolutamente todo lo que sepas del tema. Luego, abre tus apuntes y marca en rojo lo que se te olvidó. ¡Estudiarás el doble de rápido!"
             ]
         },
         {
-            "tags": ["procrastinar", "distraccion", "perder el tiempo", "celular", "tiktok", "instagram", "facebook", "redes", "perdiendo el tiempo", "me distraigo", "no me concentro", "pendejeando", "viendo videos"],
-            "respuesta": "¡Zeenit te ve, {nombre}! 👀 Aleja el celular 10 metros de tu escritorio o ponlo en otra habitación. La fuerza de voluntad se agota rápido, pero si cambias tu entorno físico y quitas la tentación, tu concentración aumentará al instante. ¡Tú puedes!"
+            "tags": ["cansad", "sueno", "fatiga", "dormir", "descans", "agotad", "desvelado", "desvelada", "sin energia", "morirme de sueno", "burnout", "quemado", "quemada", "harto", "harta"],
+            "respuesta": [
+                "🧠 Un 'Descanso Efectivo' no es ver TikTok, {nombre}. Haz un 'Ayuno de Pantallas' por 10 min: Levántate, estírate, toma agua y mira por la ventana. ¡Dale un respiro real a tu mente!",
+                "¡Ojo con el cansancio extremo (burnout), {nombre}! 😴 Si llevas más de 2 horas estudiando, tu cerebro ya no está absorbiendo información. Tómate un descanso real de 20 minutos.",
+                "El descanso también es parte del estudio, {nombre}. 🛌 Dormir entre 7 y 8 horas es vital para que tu cerebro guarde lo que aprendiste hoy en el hipocampo. ¡Desvelarte estudiando a veces es contraproducente!"
+            ]
         },
         {
-            "tags": ["motivacion", "rendirse", "no puedo", "triste", "desmotivad", "llorar", "quiero llorar", "dejar la carrera", "darme de baja", "no sirvo para esto", "depre", "bajon", "tristeza", "sin ganas"],
-            "respuesta": "Es normal sentirse así a veces, {nombre} 🌟. Un mal día o una semana pesada no definen tu capacidad como estudiante ni tu futuro. Tómate un respiro, sé amable contigo mismo/a y recuerda por qué elegiste este camino. ¡Paso a paso!"
+            "tags": ["organizacion", "tiempo", "tareas", "horario", "agenda", "organizar", "planificar", "no me da el tiempo", "muchas cosas por hacer", "calendario", "entregas", "proyectos"],
+            "respuesta": "📅 ¡Optimiza tu tiempo, {nombre}! El secreto es la 'Regla de los 2 minutos': Si una tarea toma menos de 2 minutos (mandar un correo, ordenar tu escritorio), hazla YA. Para lo demás, divide tus proyectos en pasos ridículamente pequeños."
+        },
+        {
+            "tags": ["examen", "parcial", "prueba", "finales", "evaluacion", "test", "quizz", "tengo examen", "examenes", "me quede en blanco"],
+            "respuesta": [
+                "¡Mucho éxito en tus exámenes, {nombre}! 📝 Tip: Durante el examen, si te quedas en blanco en una pregunta, sáltala de inmediato y ponle una marca. Tu subconsciente seguirá buscando la respuesta mientras contestas las fáciles.",
+                "¡A dominar esa prueba, {nombre}! Recuerda: un vaso de agua antes del examen mejora la conectividad neuronal. ¡Confía en las horas de estudio que le dedicaste!"
+            ]
+        },
+        {
+            "tags": ["procrastinar", "distraccion", "perder el tiempo", "celular", "tiktok", "instagram", "facebook", "redes", "me distraigo", "no me concentro", "pendejeando", "procrastinacion"],
+            "respuesta": "¡Zeenit te ve, {nombre}! 👀 Aleja el celular 10 metros de tu escritorio. La fuerza de voluntad se agota, pero si cambias tu entorno físico y quitas la tentación, será más fácil entrar en la zona de concentración."
+        },
+        {
+            "tags": ["motivacion", "rendirse", "no puedo", "triste", "desmotivad", "llorar", "quiero llorar", "dejar la carrera", "no sirvo para esto", "depre", "bajon", "tristeza", "sin ganas"],
+            "respuesta": "Es normal sentirse así a veces, {nombre} 🌟. Un mal día o una semana pesada no definen tu capacidad ni tu futuro. Tómate un respiro, sé amable contigo mismo/a y recuerda por qué empezaste. ¡Un paso a la vez!"
+        },
+        {
+            "tags": ["sindrome del impostor", "fraude", "no merezco", "los demas son mejores", "soy tonto", "soy tonta", "no soy capaz", "inseguridad", "todos saben mas que yo"],
+            "respuesta": "Zeenit detecta 'Síndrome del Impostor' 🕵️‍♀️. Escucha bien, {nombre}: no eres un fraude y no llegaste hasta aquí por suerte. Estás aprendiendo, igual que todos los demás. Deja de comparar tu 'detrás de escenas' con la 'película editada' de los otros. ¡Eres capaz!"
+        },
+        {
+            "tags": ["materia dificil", "matematicas", "programacion", "no entiendo nada", "esta muy dificil", "imposible", "no me entra", "bloqueo", "estancad", "confusion", "blanco", "bloquead"],
+            "respuesta": "Si no estás entendiendo nada, no es porque no seas inteligente, {nombre} 🧱. Cambia el enfoque: busca un video en YouTube donde lo expliquen de forma diferente, usa analogías o pregúntale a ChatGPT que te lo explique como si tuvieras 10 años. ¡Cambia el ángulo!"
         },
         {
             "tags": ["exponer", "publico", "nervios", "presentacion", "exposicion", "hablar en publico", "papanico", "discurso", "pasar al frente"],
@@ -37,31 +62,27 @@
         },
         {
             "tags": ["reprobe", "fracas", "mala calificacion", "reprobado", "falle", "saque cero", "reprobar", "baja nota", "me fue mal", "valio", "profesor me reprobo"],
-            "respuesta": "¡Hey, respira profundo {nombre}! 🛑 Una calificación es solo un número temporal, no define tu inteligencia. El fracaso en la universidad es solo información: ahora sabes qué áreas debes reforzar. Revisa tus errores y ajusta tu método. ¡Vas a levantarte de esta!"
+            "respuesta": "¡Hey, respira profundo {nombre}! 🛑 Una calificación es solo un número temporal, no define tu valor. El fracaso es solo información: ahora sabes qué áreas debes reforzar. Revisa tus errores y ajusta tu método. ¡Vas a levantarte de esta!"
         },
         {
-            "tags": ["bloqueo", "estancad", "confusion", "blanco", "no se que hacer", "bloquead", "no me sale", "atascado", "atascada", "frustrada", "frustrado"],
-            "respuesta": "Zeenit detecta un bloqueo mental 🧱. No fuerces la máquina, {nombre}. Cambia de entorno: ve a otra habitación, sal a caminar 5 minutos o escribe todas tus ideas sueltas en un papel sin juzgarlas. ¡El cerebro resuelve problemas cuando se relaja!"
-        },
-        {
-            "tags": ["hola", "buenos dias", "buenas tardes", "buenas noches", "hey", "saludos", "que onda", "holi", "holis", "hablar", "alguien ahi", "buenas"],
+            "tags": ["hola", "buenos dias", "buenas tardes", "buenas noches", "hey", "saludos", "que onda", "holi", "holis", "hablar", "buenas"],
             "respuesta": [
-                "¡Hola, {nombre}! 👋 Soy Zeenit, tu compañero de bienestar estudiantil. ¿Cómo te sientes hoy?",
-                "¡Qué onda, {nombre}! Aquí Zeenit reportándose. ¿Todo bien con las clases de la uni?",
+                "¡Hola, {nombre}! 👋 Soy Zeenit, tu compañero de bienestar. ¿Cómo te sientes hoy?",
+                "¡Qué onda, {nombre}! Aquí Zeenit reportándose. ¿Todo bien con la uni?",
                 "¡Hola, {nombre}! Recuerda respirar profundo el día de hoy. ¿En qué te puedo ayudar o de qué quieres platicar? 🌟"
             ]
         },
         {
-            "tags": ["gracias", "agradezco", "buenisimo", "genial", "excelente", "grx", "ty", "gracias bot", "chido", "gracias zeenit", "cool", "me ayudas mucho", "eres lo mejor", "te quiero bot", "te quiero zeenit", "okay", "ok"],
+            "tags": ["gracias", "agradezco", "buenisimo", "genial", "excelente", "grx", "ty", "gracias bot", "chido"],
             "respuesta": "¡De nada, {nombre}! 🥰 Para eso estoy aquí. Recuerda que cuidar de tu salud mental es igual de importante que estudiar para tus materias. ¡Mucho éxito en tu día!"
         },
         {
-            "tags": ["adios", "bye", "chao", "hasta luego", "nos vemos", "cuidate", "me voy", "alinia", "buenas noches bot"],
-            "respuesta": "¡Nos vemos pronto, {nombre}! 🚀 No olvides tomar tus descansos efectivos y estirarte un poco de la silla. ¡Zeenit siempre estará aquí cuando me necesites!"
+            "tags": ["adios", "bye", "chao", "hasta luego", "nos vemos", "cuidate", "me voy", "buenas noches bot"],
+            "respuesta": "¡Nos vemos pronto, {nombre}! 🚀 No olvides tomar tus descansos efectivos. ¡Zeenit siempre estará aquí cuando me necesites!"
         },
         {
             "tags": ["quien eres", "que haces", "como funcionas", "ayuda", "comandos", "info", "sobre ti"],
-            "respuesta": "🤖 Hola {nombre}, soy ZeenitBot, un asistente experto en bienestar para universitarios. Puedo darte consejos si te sientes estresado, cansado, procrastinando, si vas a exponer o si necesitas organizarte con Pomodoro. ¡Solo cuéntame cómo te va!"
+            "respuesta": "🤖 Hola {nombre}, soy ZeenitBot. Puedo darte técnicas de estudio (como Feynman o Active Recall), ayudarte a calmar el estrés y la ansiedad, o darte consejos si te sientes desmotivado. ¡Usa los botones o háblame de lo que necesites!"
         }
     ]
 }
